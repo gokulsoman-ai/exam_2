@@ -1,0 +1,15 @@
+class product {
+  String _name;
+  double _price;
+  product(this._name, this._price);
+  String get getname => _name;
+  double get getprice => _price;
+  set getprice(double price) {
+    if (price > 0) {
+      _price = price;
+    } else
+      print("print must be greater than zero");
+  }
+
+  double get getpricetax => _price * 1.18;
+}
