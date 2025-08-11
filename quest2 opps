@@ -1,0 +1,25 @@
+
+void main() {
+  Employee e1 = FullTimeEmployee(30000);
+  Employee e2 = PartTimeEmployee(120, 200);
+  print("Full-time: ${e1.calculateSalary()}");
+  print("Part-time: ${e2.calculateSalary()}");
+}
+
+class Employee {
+  double calculateSalary() => 0;
+}
+
+class FullTimeEmployee extends Employee {
+  double monthlySalary;
+  FullTimeEmployee(this.monthlySalary);
+  @override
+  double calculateSalary() => monthlySalary;
+}
+
+class PartTimeEmployee extends Employee {
+  double hoursWorked, ratePerHour;
+  PartTimeEmployee(this.hoursWorked, this.ratePerHour);
+  @override
+  double calculateSalary() => hoursWorked * ratePerHour;
+}
